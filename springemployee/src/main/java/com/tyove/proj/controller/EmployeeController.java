@@ -22,11 +22,16 @@ public class EmployeeController {
 		return eDA0.getAll();
 		
 	}
+	
+	//open postman use run the get method with localhost:8080/employees/1 to get the first 
+	//employee  localhost:8080/employees/2 to get the 2nd etc
 	@GetMapping("/employees/{id}")
 	public Employee getEmployeeById(@PathVariable int id) {
 		
 		return eDA0.getById(id);
 	}
+	
+	//run post 
 	@PostMapping("/employees")
 	public String saveEmployee(@PathVariable Employee emp) {
 		
@@ -35,13 +40,13 @@ public class EmployeeController {
 	
 	@PutMapping("/employees/{id}")
 	public String updateEmployeeById(@PathVariable Employee emp, @PathVariable int id) {
-		return eDA0.update(emp, id) + " rows updated";
+		return eDA0.update(emp, id) + " rows updated in the database";
 	}
 
 	
 	@DeleteMapping("/employees/{id}")
 	public String deleteEmployeeById(@PathVariable int id) {
-		return eDA0.delete(id) + " rows deleted";
+		return eDA0.delete(id) + " rows deleted from database";
 	}
 }
 
