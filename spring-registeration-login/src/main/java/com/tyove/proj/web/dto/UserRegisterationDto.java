@@ -6,7 +6,10 @@ public class UserRegisterationDto {
 	private String email;
 	private String password;
 	
-	
+	public UserRegisterationDto(){
+		
+		
+	}
 	public UserRegisterationDto(String firstName, String lastName, String email, String password) {
 		super();
 		this.firstName = firstName;
@@ -14,6 +17,9 @@ public class UserRegisterationDto {
 		this.email = email;
 		this.password = password;
 	}
+	
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}
