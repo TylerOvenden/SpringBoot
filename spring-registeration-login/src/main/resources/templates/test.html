@@ -8,74 +8,67 @@
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
 </head>
-<body>
 
-	<!-- create navigation bar ( header) -->
+
+<body>
+<!-- run http://localhost:8080/registration -->
+	<!-- navigation bar header -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					data-toggle="collapse" data-target=#navbar aria-expanded="false"
 					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
+					<span class="sr-only"> Toggle Navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registration and
-					Login Module</a>
+				<a class="navbar-brand" href="#" th:href="@{/}"> Registration
+					and Login Module </a>
 			</div>
 		</div>
 	</nav>
-
-<br>
-<br>
-	<!-- Create HTML registration form -->
+	
+	
+	
+	<!-- registeration form -->
 	<div class="container">
 		<div class="row">
-		<!-- col-md-6 means the div takes up 6 of the 12 availablec columns
+			<!-- col-md-6 means the div takes up 6 of the 12 availablec columns
 	col-md-offset-3 means there's an offset to the left of 3 columns to center it
 	 -->
-		
-			<div class="col-md-6 col-md-offset-3">
-
-				<!-- th:if thymeleaf if condition, reads the param
+			<div class="col-md-6 col-md-offset-3"></div>
+			<!-- th:if thymeleaf if condition, reads the param
 	 	from userregisteration controller registeruseraccount
 	 	method -->
-				<div th:if="${param.success}">
-					<div class="alert alert-info">You've successfully registered
-						to our awesome app!</div>
-				</div>
-
+			<div th:if="${param.sucess}">
+				<div class="alert alert-info">Successful registration</div>
 				<h1>Registration</h1>
-
 				<form th:action="@{/registration}" method="post" th:object="${user}">
 					<div class="form-group">
 						<label class="control-label" for="firstName"> First Name </label>
 						<input id="firstName" class="form-control" th:field="*{firstName}"
-							required autofocus="autofocus" />
+							required autofocus="autofocus">
 					</div>
-
 					<div class="form-group">
 						<label class="control-label" for="lastName"> Last Name </label> <input
 							id="lastName" class="form-control" th:field="*{lastName}"
-							required autofocus="autofocus" />
+							required autofocus="autofocus">
 					</div>
-
 					<div class="form-group">
 						<label class="control-label" for="email"> Email </label> <input
 							id="email" class="form-control" th:field="*{email}" required
-							autofocus="autofocus" />
+							autofocus="autofocus">
 					</div>
-
 					<div class="form-group">
 						<label class="control-label" for="password"> Password </label> <input
-							id="password" class="form-control" type="password"
-							th:field="*{password}" required autofocus="autofocus" />
+							id="password" class="form-control" th:field="*{password}"
+							required autofocus="autofocus">
 					</div>
-
 					<div class="form-group">
-						<button type="submit" class="btn btn-success">Register</button>
-						<span>Already registered? <a href="/" th:href="@{/login}">Login
+						<button type="submit" class="btn btn-success">Click to
+							Register</button>
+						<span>registered already? <a href="/" th:href="@{/login}">Login
 								here</a></span>
 					</div>
 				</form>
