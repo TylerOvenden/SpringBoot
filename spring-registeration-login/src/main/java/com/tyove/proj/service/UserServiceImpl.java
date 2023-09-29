@@ -1,8 +1,10 @@
 package com.tyove.proj.service;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import com.tyove.proj.model.Role;
@@ -30,5 +32,28 @@ public class UserServiceImpl implements UserService {
 				 Arrays.asList(new Role("ROLE_USER")));
 		return ur.save(user);
 	}
+
+
+	@Override
+	public User findUserByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
+
+        if (user != null) {
+            return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                    user.getPassword(),
+                    mapRolesToAuthorities(user.getRoles()));
+        }else{
+            throw new UsernameNotFoundException("Invalid username or password.");
+        }
+    }
+
 
 }

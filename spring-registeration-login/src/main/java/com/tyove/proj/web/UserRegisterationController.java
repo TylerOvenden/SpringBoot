@@ -41,7 +41,7 @@ public class UserRegisterationController {
 	@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") UserRegisterationDto urd) {
 		us.save(urd);
-		return "s";
+		 return "redirect:/registration?success";
 	}
 	@GetMapping
 	public String showRegisterationForm() {
