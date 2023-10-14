@@ -1,0 +1,70 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    margin-bottom: 13px;
+}
+
+/* Page title styles */
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Book headline styles */
+.bookHeadline {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Book description styles */
+.bookDescription {
+    font-size: 14px;
+    margin-top: 13px;
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 14px;
+}
+
+/* Input styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    background-color: blue; /* Blue button color */
+    color: white;
+    border-color: white;
+    border-style: groove;
+    padding: 15px 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
